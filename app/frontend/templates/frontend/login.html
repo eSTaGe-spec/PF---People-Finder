@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'frontend/css/login-register.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="login-title">Вход в People Finder</h1>
+
+        <div class="login-form">
+            <div class="user-name">
+                <label for="username" class="user-login">Логин</label>
+                <input id="username" type="text" placeholder="Введите логин">
+            </div>
+        
+            <div class="user-password">
+                <label for="password">Пароль</label>
+                <input id="password" type="password" placeholder="Введите пароль">
+            </div>
+        
+            <div class="action">
+                <button class="look-btn">Войти</button>
+            </div>
+        
+            <div class="links">
+                <p>Нет аккаунта? <a href="{% url "frontend:register" %}">Зарегистрироваться</a></p>
+            </div>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>

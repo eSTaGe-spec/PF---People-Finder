@@ -1,0 +1,121 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 60%;
+    min-height: 200px;
+    background-color: #fdd835;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.title {
+    display: flex; /* Укажите свойство display: flex для элемента с классом .title, чтобы содержимое этого блока располагалось в одной строке */
+    align-items: center; /* Выравнивание элементов по вертикали в контейнере */
+    text-decoration: none;
+    color: black;
+    
+}
+
+.title:hover {
+    color: grey;
+}
+
+.user {
+    text-align: right;
+}
+
+.description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    max-width: 90%;
+    padding: 10px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.price {
+    color: black;
+    padding-left: 35px;
+}
+
+.card-price {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 20px;
+}
+
+.action {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    align-items: center;
+    padding: 20px;
+}
+
+.action .look-btn {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    margin-right: 35px;
+    text-decoration: none;
+}
+
+.action .look-btn:hover {
+    background-color: #333;
+}
+
+.urgent-marker {
+    display: inline-block; 
+    margin-left: 10px;  
+    padding: 2px 5px;
+    color: white; 
+    background-color: red;
+}
+
+.pagination {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+  
+.pagination a.active {
+    background-color: black;
+    color: white;
+}
+  
+.pagination a:hover:not(.active) {background-color: #ddd;}
+  

@@ -1,0 +1,46 @@
+.content {
+    display: grid;
+    grid-template-areas:
+      "profile orders"
+      "profile created";
+    grid-gap: 30px;
+}
+
+.orders-section {
+    grid-area: orders;
+    /* Все предыдущие свойства без margin-left и margin-top */
+    width: 300px;
+    padding: 10px;
+}
+
+.order {
+    border: 1px solid black; 
+    background-color: #fdd835;
+    padding: 10px; 
+    margin-bottom: 10px;
+    min-width: 500px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.action .look-btn {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.action .look-btn:hover {
+    background-color: #333;
+}
+
+
+
+.orders-section {
+    margin-right: 1500px;
+    min-width: 350px;
+}

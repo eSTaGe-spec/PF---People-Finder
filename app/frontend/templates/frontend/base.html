@@ -1,10 +1,51 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}qwe{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'frontend/css/base.css' %}">
 </head>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="site-name">
+                <h1>People Finder</h1>
+            </div>
+            <div class="links">
+                <a href="{% url "frontend:index" %}">Главная</a>
+                <a href="{% url "frontend:create-order" %}">Создать заказ</a>
+                <a href="{% url "frontend:users" %}">Пользователи</a>
+                {% if user.is_superuser %}
+                <a href="{% url "admin:index" %}">Админ панель</a>
+                {% endif %}    
+            </div>
+            
+            <div class="actions">
+                {% if user.is_authenticated %}
+                    <p>Здравствуйте, {{ user.username }}!</p>
+                    <div class='dropdown'>
+                        <button class='dropdown-button menu-btn'>Меню</button>
+                        <div class='dropdown-content'>
+                            <a href="{% url "frontend:profile" %}">Профиль</a>
+                            <a href="{% url "frontend:user-settings" %}">Настройки</a>
+                            <a href="#">Выйти</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{% url "frontend:login" %}" class="action-btn">Войти</a>
+                    <a href="{% url "frontend:register" %}" class="action-btn">Регистрация</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</header>
 <body>
-
+{% block content %}{% endblock content %}
 </body>
+<footer class="footer">
+    <div class="container">
+        <p>© 2024 People Finder</p>
+    </div>
+</footer>
 </html>

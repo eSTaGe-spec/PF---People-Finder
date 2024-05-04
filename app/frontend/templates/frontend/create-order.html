@@ -1,0 +1,44 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}Создание заказа{% endblock title %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'frontend/css/create-order.css' %}">
+<div class="content">
+    <div class="order-section">
+        <h2>Создание заказа</h2>
+        <form action="/path_to_your_backend" method="POST">
+            <div class="form-group">
+                <label for="order-title">Название заказа</label>
+                <input type="text" id="order-title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="order-description">Описание заказа</label>
+                <textarea id="order-description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="order-price">Цена заказа</label>
+                <input type="number" id="order-price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="order-tags">Теги заказа</label>
+                <select id="order-tags" name="tags" multiple>
+                            <!-- Тут будут динамически генерироваться теги -->
+                </select>
+
+                <div class="form-group">
+                    <label for="urgent-order">Срочный заказ</label>
+                    <input type="checkbox" id="urgent-order" name="urgent">
+                </div>
+                
+
+            </div>
+            <button type="submit">Создать заказ</button>
+        </form>
+        
+    </div>
+</div>
+
+{% endblock content %}

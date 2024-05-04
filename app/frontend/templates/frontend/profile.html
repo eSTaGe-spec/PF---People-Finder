@@ -1,0 +1,66 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}Профиль{% endblock title %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'frontend/css/profile/profile-data.css'%}">
+<link rel="stylesheet" href="{% static 'frontend/css/profile/profile-order.css'%}">
+
+<div class="content">
+    <div class="profile-section">
+        <div class="profile-info">
+            <div class="avatar">
+                <img src="{% static "frontend/img/image.jpg" %}" alt="Аватар">
+            </div>
+            <h2 class="user-name">Admin</h2>
+            <ul class="user-details">
+                <li><strong>Возраст:</strong> <span>25 лет</span></li>
+                <li><strong>Стаж работы:</strong> <span>5 лет</span></li>
+                <li><strong>Номер телефона: </strong> <span>+79642134564</span></li>
+                <li><strong>Почта:</strong> <span>pyTop@mail.ru</span></li>
+                <li><strong>Навыки:</strong> <span>Pascal, Python, CSS, HTML</span></li>
+            </ul>        
+        </div>
+    </div>
+    <div class="orders-section">
+        <h2 class="orders-heading">Взятые заказы</h2>
+
+        <div class="order">
+            <h3 class="order-title">Заказ по CSS</h3>
+            <div class="action">
+                <a href="#" class="look-btn">Посмотреть заказ</a>
+            </div>
+        </div>
+        
+
+        <div class="order">
+            <h3 class="order-title">Заказ по CSS</h3>
+            <div class="action">
+                <a href="#" class="look-btn">Посмотреть заказ</a>
+            </div>
+        </div>
+
+        <h2 class="orders-heading">Созданные заказы</h2>
+
+
+        <div class="order">
+            <h3 class="order-title">Заказ по CSS</h3>
+            <div class="action">
+                <a href="#" class="look-btn">Посмотреть заказ</a>
+            </div>
+        </div>
+
+        <div class="order">
+            <h3 class="order-title">Заказ по CSS</h3>
+            <div class="action">
+                <a href="#" class="look-btn">Посмотреть заказ</a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+{% endblock content %}

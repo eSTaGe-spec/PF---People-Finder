@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* высота viewport */
+    margin: 0;
+    background-color: #f4f4f4; /* светло-серый цвет фона. */
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    /* Вы можете задать ширину и высоту, если вы хотите */
+    text-align: center; /* Этот стиль центрирует заголовок относительно контейнера входа */
+}
+
+
+.login-title {
+    /* Здесь вы можете добавить любые стили, которые вы хотите применить к заголовку */
+    font-size: 32px; /* Пример */
+    margin-bottom: 20px; /* Добавили отступ снизу */
+}
+
+.login-form {
+    border: 3px solid #fdd835;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Увеличена ширина */
+}
+
+.login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Отступ снизу */
+    border: 1px solid #ddd; /* Серая обводка вокруг инпута */
+    border-radius: 5px; /* Скругление углов */
+    padding-right: 0px;
+    font-size: 18px; /* Размер шрифта */
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+    transition: box-shadow .3s ease;
+}
+
+
+.login-form input[type="text"]:hover, .login-form input[type="password"]:hover {
+    box-shadow: 0 0 10px #999;
+}
+
+
+.action {
+    text-align: right;
+}
+
+.action .look-btn {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.action .look-btn:hover {
+    background-color: #333;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #666;
+}
+
+.links {
+    text-align: right;
+}

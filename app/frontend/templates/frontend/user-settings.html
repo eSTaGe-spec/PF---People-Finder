@@ -1,0 +1,32 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}Настройки пользователя{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'frontend/css/user-settings.css' %}">
+
+<div class="settings">
+    <h2>Настройки пользователя</h2>
+    <form class="settings-form" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="avatar">Аватар</label>
+            <input type="file" id="avatar" name="avatar">
+        </div>
+        <div class="form-group">
+            <label for="age">Возраст</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div class="form-group">
+            <label for="experience">Стаж работы</label>
+            <input type="number" id="experience" name="experience">
+        </div>
+        <div class="form-group">
+            <label for="skills">Навыки</label>
+            <textarea id="skills" name="skills"></textarea>
+        </div>
+        <button class="submit-btn">Обновить настройки</button>
+    </form>
+</div>
+
+{% endblock content %}
