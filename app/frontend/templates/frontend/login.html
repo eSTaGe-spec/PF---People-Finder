@@ -9,31 +9,37 @@
     <title>Вход</title>
 </head>
 <body>
-    <div class="login-container">
-        <h1 class="login-title">Вход в People Finder</h1>
+    <form @submit.prevent="signIn()">
+        <div class="login-container">
+            <h1 class="login-title">Вход в People Finder</h1>
 
-        <div class="login-form">
-            <div class="user-name">
-                <label for="username" class="user-login">Логин</label>
-                <input id="username" type="text" placeholder="Введите логин">
-            </div>
-        
-            <div class="user-password">
-                <label for="password">Пароль</label>
-                <input id="password" type="password" placeholder="Введите пароль">
-            </div>
-        
-            <div class="action">
-                <button class="look-btn">Войти</button>
-            </div>
-        
-            <div class="links">
-                <p>Нет аккаунта? <a href="{% url "frontend:register" %}">Зарегистрироваться</a></p>
+            <div class="login-form">
+                <div class="user-name">
+                    <label for="username" class="user-login">Логин</label>
+                    <input id="login" type="text" placeholder="Введите логин">
+                </div>
+            
+                <div class="user-password">
+                    <label for="password">Пароль</label>
+                    <input id="password" type="password" placeholder="Введите пароль">
+                </div>
+            
+                <div class="action">
+                    <input class="look-btn" value="Войти" type="submit">
+                </div>
+                <div id="error-message" style="color: red;"></div>
+            
+                <div class="links">
+                    <p>Нет аккаунта? <a href="{% url "frontend:register" %}">Зарегистрироваться</a></p>
+                </div>
             </div>
         </div>
+    </form>
+    
 
-    </div>
-    
-    
+
+    <script src="{% static 'frontend/js/login.js' %}"></script>
 </body>
 </html>
+
+

@@ -14,7 +14,7 @@
             </div>
             <div class="links">
                 <a href="{% url "frontend:index" %}">Главная</a>
-                <a href="{% url "frontend:create-order" %}">Создать заказ</a>
+                <a href="{% url "frontend:create_order" %}">Создать заказ</a>
                 <a href="{% url "frontend:users" %}">Пользователи</a>
                 {% if user.is_superuser %}
                 <a href="{% url "admin:index" %}">Админ панель</a>
@@ -23,13 +23,13 @@
             
             <div class="actions">
                 {% if user.is_authenticated %}
-                    <p>Здравствуйте, {{ user.username }}!</p>
+                    <p>Здравствуйте, {{ user.profile.name }}!</p>
                     <div class='dropdown'>
                         <button class='dropdown-button menu-btn'>Меню</button>
                         <div class='dropdown-content'>
                             <a href="{% url "frontend:profile" %}">Профиль</a>
-                            <a href="{% url "frontend:user-settings" %}">Настройки</a>
-                            <a href="#">Выйти</a>
+                            <a href="{% url "frontend:user_settings" %}">Настройки</a>
+                            <a href="{% url "frontend:logout" %}">Выйти</a>
                         </div>
                     </div>
                 {% else %}
