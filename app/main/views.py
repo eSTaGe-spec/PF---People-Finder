@@ -52,7 +52,6 @@ class CreateTaskAPIView(APIView):
         if serializer.is_valid():
             serializer.save(created_by=request.user)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        print(serializer.errors)
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
