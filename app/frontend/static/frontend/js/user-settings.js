@@ -15,6 +15,8 @@ function getCookie(name) {
 
 
 window.onload = async function() {
+    const userId = document.cookie.userId;
+    console.log(userId)
     await loadUserData();
     await loadSkills();
     document.getElementById('settings-form').addEventListener('submit', function(event) {
@@ -90,7 +92,7 @@ async function changeProfile(event) {
 
         const data = await response.json();
         console.log('Профиль обновлен', data);
-        window.location.href = "/profile/";
+        window.location.href = `/`;
         
     } catch (error) {
         console.error('Произошла ошибка при отправке формы', error);
