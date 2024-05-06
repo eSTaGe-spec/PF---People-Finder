@@ -1,18 +1,17 @@
-import json
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 
 from .models import Profile, Skills
-from .serializers import ProfileSerializer, SkillsSerializer
+from .serializers import ProfileSerializer, SkillsSerializer, ProfileShortSerializer
 
 
 class ProfileAPIView(APIView):
-    def get(self, request):
-        user = request.user
+    def get(self, request, user_id):
+        user = get_object_or_404(User, pk=user_id)
         info = Profile.objects.get(user=user)
         serializer = ProfileSerializer(info)
 
@@ -63,7 +62,6 @@ class UserInfoAPIView(APIView):
     def post(self, request):
         user = Profile.objects.get(user=request.user)
         serializer = ProfileSerializer(user, data=request.data)
-        print(serializer)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -77,3 +75,11 @@ class SkillsAPIView(APIView):
         skills = Skills.objects.all()
         serializer = SkillsSerializer(skills, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class UsersInfoAPIView(APIView):
+    def get(self, request):
+        users = Profile.objects.all()
+        serializer = ProfileShortSerializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+

@@ -4,42 +4,40 @@
 {% block title %}Заказ: Задание по css{% endblock title %}
 
 {% block content %}
-
 <div class="main">
     <link rel="stylesheet" href="{% static 'frontend/css/task.css' %}">
-    <h1 class="titleh1">Заказ: Задание по css</h1>
-
+    <h1 class="titleh1"></h1>
+    
     <div class="card">
         <div class="header">
-            <h2><a href="#" class="title">Задание по css</a></h2>
-            <h2 class="user"><a href="#" class="title">Admin</a></h2>
+            <h2 class="title"></h2>
+            <h2 class="user-taken-task"></h2>
+            <h2 class="user"></h2>
         </div>
-        <p class="description">Свойство font-family используется для выбора начертания шрифта.
-             Поскольку невозможно предсказать, установлен тот или иной шрифт на компьютере посетителя вашего сайта,
-              рекомендуется прописывать все возможные варианты однотипных шрифтов. В таком случае браузер будет
-               проверять их наличие, последовательно перебирая предложенные варианты.
-        </p>
+        <p class="description"></p>
         
         <div class="wrap-tag">
             <div class="tags">
                 <h3>Теги</h3>
                 <div class="tag-container">
-                <a href="#" class="tag-link">Программирование</a>
-                <a href="#" class="tag-link">CSS</a>
                 </div>
             </div>
         </div>
 
         <div class="card-footer">
             <div class="card-price">
-                <h2 class="price">Цена задания: 8000 руб</h2>
+                <h2 class="price"></h2>
             </div>
+            
             <div class="action">
-                <a href="#" class="look-btn">Взять заказ</a>
+                <form action="" method="post" id="take-task">
+                    {% csrf_token %}
+                    <button type="submit" class="look-btn">Взять заказ</button>
+                </form>
             </div>
+            
         </div>
     </div>
-
 </div>
-
+<script src="{% static 'frontend/js/task.js' %}"></script>
 {% endblock content %}

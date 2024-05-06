@@ -33,6 +33,13 @@
     
 }
 
+.user-title {
+    display: flex; /* Укажите свойство display: flex для элемента с классом .title, чтобы содержимое этого блока располагалось в одной строке */
+    align-items: center; /* Выравнивание элементов по вертикали в контейнере */
+    text-decoration: none;
+    color: black;
+}
+
 .title:hover {
     color: grey;
 }
